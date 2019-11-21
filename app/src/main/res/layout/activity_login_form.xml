@@ -1,68 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-    <LinearLayout android:orientation="vertical"
-    android:gravity="center"
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:paddingTop="?attr/actionBarSize"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:id="@+id/container"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView android:gravity="center"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_height="wrap_content"
+        android:layout_width="0dp" android:id="@+id/nav_view"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintRight_toRightOf="parent" 
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="?android:attr/windowBackground"
+        android:layout_marginEnd="0dp" android:layout_marginStart="0dp"/>
+
+    <fragment android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:textFontWeight="@integer/config_navAnimTime"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="Softwarica"
-        android:id="@+id/textView2"/>
+        android:id="@+id/nav_host_fragment"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:navGraph="@navigation/mobile_navigation"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:defaultNavHost="true" android:name="androidx.navigation.fragment.NavHostFragment"/>
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp">
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/username"
-        android:selectAllOnFocus="true"
-        android:inputType="textPersonName"
-        android:hint="Enter User Name"
-        android:layout_gravity="center"/>
-
-</com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="8dp"
-
-        android:layout_marginTop="8dp">
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/password"
-        android:selectAllOnFocus="true"
-        android:inputType="textPassword"
-        android:hint="Enter Password"
-        android:layout_gravity="center"/>
-
-</com.google.android.material.textfield.TextInputLayout>
-
-    <Button android:gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Login"
-        android:id="@+id/login"
-        android:layout_marginBottom="64dp"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center"
-        android:background="@drawable/round_buttom"
-        android:layout_marginEnd="48dp"
-        android:layout_marginStart="48dp"/>
-
-</LinearLayout>
-
-
+</androidx.constraintlayout.widget.ConstraintLayout>

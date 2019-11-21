@@ -8,14 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.example.thirdassignment.R;
 import com.example.thirdassignment.model.Student;
@@ -34,14 +30,14 @@ public class AddStudentFragment extends Fragment implements  View.OnClickListene
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_addstudent, container, false);
-        etAge = view.findViewById(R.id.age);
-        etName = view.findViewById(R.id.username);
-        etAddress = view.findViewById(R.id.address);
+        etAge = view.findViewById(R.id.etAge);
+        etName = view.findViewById(R.id.etName);
+        etAddress = view.findViewById(R.id.etAddress);
         rMale= view.findViewById(R.id.rbMale);
         rFemale= view.findViewById(R.id.rbFemale);
         rOthers= view.findViewById(R.id.rbOthers);
-        rg=view.findViewById(R.id.rg);
-        btnSave=view.findViewById(R.id.save);
+        rg=view.findViewById(R.id.rgGender);
+        btnSave=view.findViewById(R.id.btnSave);
         btnSave.setOnClickListener(this);
         return view;
 
@@ -52,7 +48,7 @@ public class AddStudentFragment extends Fragment implements  View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.save:
+            case R.id.btnSave:
                 Username = etName.getText().toString().trim();
                 Address = etAddress.getText().toString().trim();
                 Age = etAge.getText().toString().trim();

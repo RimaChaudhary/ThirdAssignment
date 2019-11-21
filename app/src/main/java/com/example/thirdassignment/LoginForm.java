@@ -1,55 +1,30 @@
 package com.example.thirdassignment;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class LoginForm extends AppCompatActivity {
-    EditText username,password;
-    Button login;
-    String user,pass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_form);
-
-        username=findViewById(R.id.username);
-        password=findViewById(R.id.password);
-        login=findViewById(R.id.login);
-
-
-
-
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                user=username.getText().toString().trim();
-                pass=password.getText().toString().trim();
-                if(!user.isEmpty()&& !pass.isEmpty()){
-
-                    if(user.equals("admin")&&pass.equals("admin")){
-                        Intent intent= new Intent(LoginForm.this,MainActivity.class);
-                        startActivity(intent);
-                        //Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                    }
-
-                }
-                else
-                {
-                    if(user.isEmpty()){
-                        username.setError("Enter User Name");
-                    }
-                    if(pass.isEmpty()){
-                        username.setError("Enter Password");
-                    }
-                }
-            }
-        });
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(navView, navController);
     }
-}
 
+}

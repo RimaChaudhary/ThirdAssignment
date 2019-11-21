@@ -1,4 +1,5 @@
 package com.example.thirdassignment.adapter;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,8 +16,6 @@ import com.example.thirdassignment.R;
 import com.example.thirdassignment.model.Student;
 
 import java.util.List;
-
-
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder>{
 

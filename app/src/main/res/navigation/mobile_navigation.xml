@@ -14,12 +14,12 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.thirdassignment.ui.addstudent.AddStudentFragment"
-        android:label="@string/title_dashboard"
+        android:label="AddStudent"
         tools:layout="@layout/fragment_addstudent" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.thirdassignment.ui.aboutus.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:name="com.example.thirdassignment.ui.aboutus.AboutUsFragment"
+        android:label="AboutUs"
         tools:layout="@layout/fragment_aboutus" />
 </navigation>
