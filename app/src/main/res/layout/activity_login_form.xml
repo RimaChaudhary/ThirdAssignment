@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <LinearLayout android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textFontWeight="@integer/config_navAnimTime"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Softwarica"
+        android:id="@+id/textView2"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp">
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/username"
+        android:selectAllOnFocus="true"
+        android:inputType="textPersonName"
+        android:hint="Enter User Name"
+        android:layout_gravity="center"/>
+
+</com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="8dp"
+
+        android:layout_marginTop="8dp">
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/password"
+        android:selectAllOnFocus="true"
+        android:inputType="textPassword"
+        android:hint="Enter Password"
+        android:layout_gravity="center"/>
+
+</com.google.android.material.textfield.TextInputLayout>
+
+    <Button android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Login"
+        android:id="@+id/login"
+        android:layout_marginBottom="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_buttom"
+        android:layout_marginEnd="48dp"
+        android:layout_marginStart="48dp"/>
+
+</LinearLayout>
+
+
